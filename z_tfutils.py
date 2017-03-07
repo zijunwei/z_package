@@ -6,8 +6,6 @@ import os
 import sys
 
 
-
-
 def get_all_names():
     '''
     get all the names of a graph
@@ -160,3 +158,12 @@ def print_gflags(FLAGS=None):
     print '*'*40
 
     sys.stdout.flush()
+
+
+def perturb(image):
+    #Perturb image for better training
+    image = tf.image.random_brightness(image, max_delta=32. / 255.)
+    image = tf.image.random_contrast(image, lower=0.5, upper=1.5)
+    image = tf.image.random_saturation(image, lower=0.5, upper=1.5)
+    image = tf.image.random_hue(image, max_delta=0.2)
+    return image
