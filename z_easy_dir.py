@@ -1,7 +1,9 @@
 """
 Creates a set of subdirectories to save the generated files when running tensorflow
 Dependencies: utils
+by Zijun Wei
 """
+
 import os
 import z_utils as utils
 
