@@ -35,5 +35,6 @@ def spp_vfn(input_, levels=None, scope='spp_vfn_layer', reuse=None):
         spp_pool = tf.concat(axis=1, values=pool_outputs)
         spp_pool = tf.reduce_max(spp_pool, reduction_indices=[1])
         tf_reduction = slim.fully_connected(spp_pool, 1000, activation_fn=None,
-                                        normalizer_fn=None, scope='spp_reduction', reuse=False)
+                                        normalizer_fn=None, scope='spp_reduction', reuse=False,
+                                            weights_regularizer=slim.l2_regularizer(0.0001))
     return tf_reduction
