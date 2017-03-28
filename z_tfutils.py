@@ -119,7 +119,7 @@ def gpu_config(gpu_id=None):
 
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
-        config.gpu_options.per_process_gpu_memory_fraction = 0.6
+        config.gpu_options.per_process_gpu_memory_fraction = 0.9
         config.allow_soft_placement = True
     else:
         config = tf.ConfigProto()
