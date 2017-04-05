@@ -138,7 +138,7 @@ def activation_summary(x, tensor_name=None):
 
 #gpu_config:
 def gpu_config(gpu_id=None):
-    if gpu_id is not None:
+    if gpu_id is not None and gpu_id != -1:
         os.environ['CUDA_VISIBLE_DEVICES'] = str(gpu_id)
 
         config = tf.ConfigProto()
